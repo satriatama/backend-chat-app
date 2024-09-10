@@ -27,7 +27,7 @@ development:
   database: backend-chat-app
   pool: 5
   username: postgres 
-  password: Sarijati123.
+  password: postgres
   host: localhost
   port: 5432
 
