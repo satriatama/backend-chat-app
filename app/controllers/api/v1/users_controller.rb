@@ -15,4 +15,21 @@ class Api::V1::UsersController < ApplicationController
       }, status: :unprocessable_entity
     end
   end
+
+  def show
+    user = User.find(params[:id])
+    if user
+      render json: {
+        status: 'SUCCESS',
+        message: 'Loaded user',
+        data: user
+      }, status: :ok
+    else
+      render json: {
+        status: 'ERROR',
+        message: 'User not found',
+        data: user.errors
+      }, status: :unprocessable_entity
+    end
+  end
 end
